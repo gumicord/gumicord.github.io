@@ -140,7 +140,7 @@ html[data-theme="dark"] .btn.primary { color: #14141a; }
 }
 .warn.small { font-size: 13px; }
 #download .cta { justify-content: flex-start; }
-#download > p { max-width: 680px; }
+#download .warn { max-width: none; }
 .reqs { list-style: none; display: flex; gap: 8px; flex-wrap: wrap; padding: 0; margin: 14px 0; }
 .reqs li { font-size: 13px; color: var(--muted); border: 1px dashed var(--border); border-radius: 8px; padding: 2px 12px; }
 footer {
