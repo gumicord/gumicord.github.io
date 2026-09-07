@@ -139,6 +139,8 @@ html[data-theme="dark"] .btn.primary { color: #14141a; }
   padding: 10px 18px; font-size: 14px; max-width: 680px;
 }
 .warn.small { font-size: 13px; }
+.reqs { list-style: none; display: flex; gap: 8px; flex-wrap: wrap; padding: 0; margin: 14px 0; }
+.reqs li { font-size: 13px; color: var(--muted); border: 1px dashed var(--border); border-radius: 8px; padding: 2px 12px; }
 footer {
   border-top: 1px solid var(--border); color: var(--muted);
   display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;
