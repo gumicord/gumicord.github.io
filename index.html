@@ -2,14 +2,12 @@
 <html lang="ja" data-theme="light">
 <head>
   <meta charset="UTF-8">
-  <title>Gumicord — 自分好みの Discord クライアント</title>
+  <title>Gumicord — Discordを、もっと自分好みに</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Gumicord はテーマとプラグインで拡張できるサードパーティ製 Discord クライアント。Windows・macOS・Linux・Android・iOS に対応。">
+  <meta name="description" content="Gumicord はテーマとプラグインで自分好みに育てる Discord クライアント。Windows・macOS・Linux・Android・iOS に対応。">
   <meta name="color-scheme" content="light dark">
   <link rel="icon" href="assets/app-icon-desktop.png">
   <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/prismjs@1/themes/prism.min.css" id="prism-light">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/prismjs@1/themes/prism-tomorrow.min.css" id="prism-dark" disabled>
 </head>
 <body>
   <header class="top">
@@ -18,9 +16,9 @@
       <span>Gumicord</span>
     </a>
     <nav class="links">
-      <a href="#features" data-i18n="nav.features">機能</a>
+      <a href="#demo" data-i18n="nav.demo">試す</a>
+      <a href="#features" data-i18n="nav.features">特徴</a>
       <a href="#download" data-i18n="nav.download">ダウンロード</a>
-      <a href="#docs" data-i18n="nav.docs">ドキュメント</a>
     </nav>
     <div class="controls">
       <select id="lang-select" aria-label="Language">
@@ -40,126 +38,95 @@
 
   <main id="top">
     <section class="hero">
-      <p class="eyebrow" data-i18n="hero.eyebrow">サードパーティ製 Discord クライアント</p>
-      <h1>Gumicord</h1>
-      <p class="tagline" data-i18n="hero.tagline">テーマとプラグインで、自分好みの Discord を。Windows・macOS・Linux・Android・iOS の5環境で同じ見た目・同じ挙動を目指す、自前レンダラのクライアント。</p>
-      <p class="warn" data-i18n="hero.warn">警告：サードパーティ製クライアントでの接続は Discord の利用規約に反し、アカウントを失う可能性があります。</p>
-      <div class="cta">
-        <a class="btn primary" href="https://github.com/gumicord/gumicord-nightly/releases" data-i18n="hero.dl">ナイトリー版を入手</a>
-        <a class="btn" href="https://gumicord.github.io/api-docs/" data-i18n="hero.docs">ドキュメントを見る</a>
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow" data-i18n="hero.eyebrow">Discordを、もっと自分好みに</p>
+          <h1>Gumicord</h1>
+          <p class="tagline" data-i18n="hero.tagline">好きな見た目、好きな機能、好きなデバイスで。重いクライアントにさよならして、軽くてかわいい毎日へ。</p>
+          <div class="cta">
+            <a class="btn primary" href="https://github.com/gumicord/gumicord-nightly/releases" data-i18n="hero.dl">無料でダウンロード</a>
+            <a class="btn ghost" href="#demo" data-i18n="hero.try">テーマを試す</a>
+          </div>
+          <ul class="platforms" aria-label="Platforms">
+            <li>Windows</li><li>macOS</li><li>Linux</li><li>Android</li><li>iOS</li>
+          </ul>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="orb orb-a"></div>
+          <div class="orb orb-b"></div>
+          <img src="assets/app-icon-desktop.png" alt="">
+        </div>
       </div>
-      <ul class="platforms" aria-label="Platforms">
-        <li>Windows</li><li>macOS</li><li>Linux</li><li>Android</li><li>iOS</li>
-      </ul>
+    </section>
+
+    <section id="demo" class="block">
+      <h2 data-i18n="demo.title">着せ替え、してみる？</h2>
+      <p class="lede" data-i18n="demo.lede">色を押すと、この見本のチャットがその場で着替える。実際のアプリではこんな感じに一瞬で変わる。</p>
+      <div class="swatches" role="group" aria-label="Theme">
+        <button type="button" data-theme-set="midnight" aria-pressed="true"><span class="dot" style="background:#7c6cf0"></span><span data-i18n="demo.midnight">ミッドナイト</span></button>
+        <button type="button" data-theme-set="sakura" aria-pressed="false"><span class="dot" style="background:#f472a7"></span><span data-i18n="demo.sakura">さくら</span></button>
+        <button type="button" data-theme-set="mint" aria-pressed="false"><span class="dot" style="background:#2fbfa0"></span><span data-i18n="demo.mint">ミント</span></button>
+        <button type="button" data-theme-set="honey" aria-pressed="false"><span class="dot" style="background:#e8a13d"></span><span data-i18n="demo.honey">はちみつ</span></button>
+      </div>
+      <div class="mock" id="mock">
+        <div class="mk-side">
+          <div class="mk-servers"><i class="on"></i><i></i><i></i></div>
+          <div class="mk-channels"><b># <span data-i18n="demo.general">ざつだん</span></b><span># <span data-i18n="demo.bot">botあそび</span></span><span># <span data-i18n="demo.theme">テーマじまん</span></span></div>
+        </div>
+        <div class="mk-main">
+          <div class="mk-head"># <span data-i18n="demo.general">ざつだん</span></div>
+          <div class="mk-msgs">
+            <div class="mk-msg"><i style="background:#7c6cf0">ね</i><div><b>ねんねこ <em>BOT</em></b><p data-i18n="demo.m1">新しいテーマ入れたよ〜！見て見て</p></div></div>
+            <div class="mk-msg"><i style="background:#2fbfa0">し</i><div><b>しろねこ</b><p data-i18n="demo.m2">かわいい！うちはミントにした</p></div></div>
+            <div class="mk-msg"><i style="background:#e8a13d">も</i><div><b>もふもふ</b><p data-i18n="demo.m3">軽いから古いPCでもサクサクだね</p></div></div>
+          </div>
+          <div class="mk-input" data-i18n="demo.input">メッセージを送信</div>
+        </div>
+      </div>
     </section>
 
     <section id="features" class="block">
-      <h2 data-i18n="feat.title">機能</h2>
+      <h2 data-i18n="feat.title">うれしいこと</h2>
       <div class="grid">
         <article>
-          <h3 data-i18n="feat.theme.t">テーマは JSON</h3>
-          <p data-i18n="feat.theme.d">CSS は不要。書いたら即反映され、壊れた箇所だけ無視される。5環境で見た目の差なく適用される。</p>
+          <div class="icon">◐</div>
+          <h3 data-i18n="feat.theme.t">見た目を変える</h3>
+          <p data-i18n="feat.theme.d">壁紙を敷いたり、色を塗り替えたり。気分で着替えて、友だちに自慢しよう。</p>
         </article>
         <article>
-          <h3 data-i18n="feat.plugin.t">プラグインは TypeScript</h3>
-          <p data-i18n="feat.plugin.d">画面部品を安定 ID で指名して変形を登録。隔離実行と承認制で、暴走しても本体は止まらない。</p>
+          <div class="icon">✦</div>
+          <h3 data-i18n="feat.plugin.t">機能を足せる</h3>
+          <p data-i18n="feat.plugin.d">便利機能は後から追加。変なものは入る前に止まるから安心。</p>
         </article>
         <article>
-          <h3 data-i18n="feat.perf.t">軽量・高速を目指す</h3>
-          <p data-i18n="feat.perf.d">Rust + wgpu の自前レンダラ。Electron より小さい常駐・速い起動を目標に、計測駆動で開発している。</p>
+          <div class="icon">➤</div>
+          <h3 data-i18n="feat.perf.t">軽くて速い</h3>
+          <p data-i18n="feat.perf.d">起動は一瞬、動作はサクサク。古いPCやスマホでも快適に。</p>
         </article>
         <article>
-          <h3 data-i18n="feat.ime.t">日本語入力</h3>
-          <p data-i18n="feat.ime.d">インライン変換で打って送信。各環境の標準入力経路を使う。</p>
-        </article>
-        <article>
-          <h3 data-i18n="feat.perm.t">権限は宣言制</h3>
-          <p data-i18n="feat.perm.d">使える道具は宣言した能力だけ。初見は承認窓が出て、許可するまで動かない。</p>
-        </article>
-        <article>
-          <h3 data-i18n="feat.oss.t">オープンソース</h3>
-          <p data-i18n="feat.oss.d">MIT ライセンス。仕様書を正本とする仕様駆動開発で作っている。</p>
+          <div class="icon">❏</div>
+          <h3 data-i18n="feat.dev.t">どこでも同じ</h3>
+          <p data-i18n="feat.dev.d">パソコンでもスマホでも、見た目も使い心地もそのまま。</p>
         </article>
       </div>
-    </section>
-
-    <section class="block">
-      <h2 data-i18n="code.title">こんなふうに書く</h2>
-      <div class="code2">
-        <div>
-          <h3>theme.json</h3>
-<pre><code class="language-jsonc">{
-  "manifest": { "id": "dev.example.mytheme",
-                "name": "My theme",
-                "version": "1.0.0", "abi": 1 },
-  "tokens": {
-    "color.bg.base": "#101018",
-    "color.text.primary": "#f0f0f5"
-  },
-  "rules": [
-    { "select": "app.window",
-      "style": { "background": "$color.bg.base" } },
-    { "select": "chat.message.content",
-      "style": { "color": "$color.text.primary" } }
-  ]
-}</code></pre>
-        </div>
-        <div>
-          <h3>plugin.ts</h3>
-<pre><code class="language-ts">import { log, ui } from "@gumicord/sdk";
-
-log.info("hello plugin loaded");
-
-ui.patch("chat.message.header.author", (node) =>
-  ui.after(node, ui.badge({ text: "hi" })),
-);</code></pre>
-        </div>
-      </div>
+      <p class="more"><a href="https://gumicord.github.io/api-docs/" data-i18n="feat.more">作る人向けの詳しい説明 →</a></p>
     </section>
 
     <section id="download" class="block">
       <h2 data-i18n="dl.title">ダウンロード</h2>
-      <p data-i18n="dl.body">開発版のナイトリーリリースを配布中。Windows（exe）・macOS（dmg）・Linux（AppImage）・Android（APK）・iOS（未署名 IPA）が入っている。</p>
+      <p data-i18n="dl.body">開発版を配布中。Windows・macOS・Linux・Android・iOS 用が入っている。ログインは携帯の Discord アプリで QR を読むだけ。</p>
       <div class="cta">
         <a class="btn primary" href="https://github.com/gumicord/gumicord-nightly/releases" data-i18n="dl.btn">リリース一覧を開く</a>
       </div>
-      <p class="note" data-i18n="dl.login">ログインは QR コードを携帯の Discord アプリで読む方式。初回起動時は案内に従うこと。</p>
-      <p class="warn small" data-i18n="dl.warn">サードパーティ製クライアントの利用は自己責任です。</p>
-    </section>
-
-    <section id="docs" class="block">
-      <h2 data-i18n="docs.title">ドキュメント</h2>
-      <div class="grid">
-        <article>
-          <h3 data-i18n="docs.api.t">API ドキュメント</h3>
-          <p data-i18n="docs.api.d">テーマ・プラグイン作者向けリファレンス（日英）。</p>
-          <p><a href="https://gumicord.github.io/api-docs/">gumicord.github.io/api-docs →</a></p>
-        </article>
-        <article>
-          <h3 data-i18n="docs.repo.t">ソースコード</h3>
-          <p data-i18n="docs.repo.d">本体・ドキュメント・ナイトリー配布のリポジトリ。</p>
-          <p>
-            <a href="https://github.com/gumicord/gumicord">gumicord</a> ·
-            <a href="https://github.com/gumicord/api-docs">api-docs</a> ·
-            <a href="https://github.com/gumicord/gumicord-nightly">nightly</a>
-          </p>
-        </article>
-      </div>
+      <p class="warn small" data-i18n="dl.warn">サードパーティ製クライアントの利用は Discord の利用規約に反し、アカウントを失う可能性があります。自己責任でどうぞ。</p>
     </section>
   </main>
 
   <footer>
     <span>© 2026 Gumicord · MIT License</span>
+    <span class="disclaimer" data-i18n="foot.disc">Discord とは関係ありません。</span>
   </footer>
 
-  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-core.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-json.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-typescript.min.js"></script>
-  <script>
-    if (window.Prism && Prism.languages.json && !Prism.languages.jsonc) {
-      Prism.languages.jsonc = Prism.languages.json;
-    }
-  </script>
   <script src="js/app.js"></script>
 </body>
 </html>

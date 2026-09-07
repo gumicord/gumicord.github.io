@@ -1,84 +1,72 @@
-/* Language (ja/en) and color theme (light/dark/auto) controls. */
+/* Language (ja/en), site theme (light/dark/auto) and mock theme demo. */
 (function () {
   "use strict";
 
   var STR = {
-    "nav.features": { ja: "機能", en: "Features" },
+    "nav.demo": { ja: "試す", en: "Try" },
+    "nav.features": { ja: "特徴", en: "Features" },
     "nav.download": { ja: "ダウンロード", en: "Download" },
-    "nav.docs": { ja: "ドキュメント", en: "Docs" },
-    "hero.eyebrow": { ja: "サードパーティ製 Discord クライアント", en: "Third-party Discord client" },
+    "hero.eyebrow": { ja: "Discordを、もっと自分好みに", en: "Discord, much more you" },
     "hero.tagline": {
-      ja: "テーマとプラグインで、自分好みの Discord を。Windows・macOS・Linux・Android・iOS の5環境で同じ見た目・同じ挙動を目指す、自前レンダラのクライアント。",
-      en: "Discord, your way, with themes and plugins. A custom-renderer client aiming for identical looks and behavior on Windows, macOS, Linux, Android and iOS."
+      ja: "好きな見た目、好きな機能、好きなデバイスで。重いクライアントにさよならして、軽くてかわいい毎日へ。",
+      en: "Your look, your features, your devices. Say goodbye to heavy clients and hello to light, lovely days."
     },
-    "hero.warn": {
-      ja: "警告：サードパーティ製クライアントでの接続は Discord の利用規約に反し、アカウントを失う可能性があります。",
-      en: "Warning: connecting with a third-party client breaks Discord's terms of service and can cost you your account."
+    "hero.dl": { ja: "無料でダウンロード", en: "Download free" },
+    "hero.try": { ja: "テーマを試す", en: "Try themes" },
+    "demo.title": { ja: "着せ替え、してみる？", en: "Fancy a new outfit?" },
+    "demo.lede": {
+      ja: "色を押すと、この見本のチャットがその場で着替える。実際のアプリではこんな感じに一瞬で変わる。",
+      en: "Tap a color and this sample chat changes on the spot. The real app switches just like this, instantly."
     },
-    "hero.dl": { ja: "ナイトリー版を入手", en: "Get nightly builds" },
-    "hero.docs": { ja: "ドキュメントを見る", en: "View docs" },
-    "feat.title": { ja: "機能", en: "Features" },
-    "feat.theme.t": { ja: "テーマは JSON", en: "Themes in JSON" },
+    "demo.midnight": { ja: "ミッドナイト", en: "Midnight" },
+    "demo.sakura": { ja: "さくら", en: "Sakura" },
+    "demo.mint": { ja: "ミント", en: "Mint" },
+    "demo.honey": { ja: "はちみつ", en: "Honey" },
+    "demo.general": { ja: "ざつだん", en: "general" },
+    "demo.bot": { ja: "botあそび", en: "bot-play" },
+    "demo.theme": { ja: "テーマじまん", en: "theme-showoff" },
+    "demo.m1": { ja: "新しいテーマ入れたよ〜！見て見て", en: "Got a new theme! Look look!" },
+    "demo.m2": { ja: "かわいい！うちはミントにした", en: "Cute! I went with mint" },
+    "demo.m3": { ja: "軽いから古いPCでもサクサクだね", en: "So light it flies even on my old PC" },
+    "demo.input": { ja: "メッセージを送信", en: "Send a message" },
+    "feat.title": { ja: "うれしいこと", en: "Why you'll love it" },
+    "feat.theme.t": { ja: "見た目を変える", en: "Change the look" },
     "feat.theme.d": {
-      ja: "CSS は不要。書いたら即反映され、壊れた箇所だけ無視される。5環境で見た目の差なく適用される。",
-      en: "No CSS. Applies instantly, ignores only broken spots, and looks the same on all five platforms."
+      ja: "壁紙を敷いたり、色を塗り替えたり。気分で着替えて、友だちに自慢しよう。",
+      en: "Lay down a wallpaper, repaint the colors. Dress it up by mood and show your friends."
     },
-    "feat.plugin.t": { ja: "プラグインは TypeScript", en: "Plugins in TypeScript" },
+    "feat.plugin.t": { ja: "機能を足せる", en: "Add features" },
     "feat.plugin.d": {
-      ja: "画面部品を安定 ID で指名して変形を登録。隔離実行と承認制で、暴走しても本体は止まらない。",
-      en: "Register transforms on stable IDs. Isolated and permission-gated, so a runaway plugin never kills the app."
+      ja: "便利機能は後から追加。変なものは入る前に止まるから安心。",
+      en: "Add handy features later. Shady ones get stopped before they get in."
     },
-    "feat.perf.t": { ja: "軽量・高速を目指す", en: "Light and fast by design" },
+    "feat.perf.t": { ja: "軽くて速い", en: "Light and fast" },
     "feat.perf.d": {
-      ja: "Rust + wgpu の自前レンダラ。Electron より小さい常駐・速い起動を目標に、計測駆動で開発している。",
-      en: "Hand-rolled Rust + wgpu renderer. Developed measurement-first toward smaller footprint and faster startup than Electron."
+      ja: "起動は一瞬、動作はサクサク。古いPCやスマホでも快適に。",
+      en: "Starts in a blink, runs buttery smooth. Comfy even on old PCs and phones."
     },
-    "feat.ime.t": { ja: "日本語入力", en: "Japanese input" },
-    "feat.ime.d": {
-      ja: "インライン変換で打って送信。各環境の標準入力経路を使う。",
-      en: "Type with inline conversion and send. Uses each platform's native input path."
+    "feat.dev.t": { ja: "どこでも同じ", en: "Same everywhere" },
+    "feat.dev.d": {
+      ja: "パソコンでもスマホでも、見た目も使い心地もそのまま。",
+      en: "Desktop or phone, the look and feel come along."
     },
-    "feat.perm.t": { ja: "権限は宣言制", en: "Declared permissions" },
-    "feat.perm.d": {
-      ja: "使える道具は宣言した能力だけ。初見は承認窓が出て、許可するまで動かない。",
-      en: "Only declared capabilities are injected. First-seen permissions ask approval and stay off until granted."
-    },
-    "feat.oss.t": { ja: "オープンソース", en: "Open source" },
-    "feat.oss.d": {
-      ja: "MIT ライセンス。仕様書を正本とする仕様駆動開発で作っている。",
-      en: "MIT licensed. Built spec-first, with the spec as source of truth."
-    },
-    "code.title": { ja: "こんなふうに書く", en: "Written like this" },
+    "feat.more": { ja: "作る人向けの詳しい説明 →", en: "Details for makers →" },
     "dl.title": { ja: "ダウンロード", en: "Download" },
     "dl.body": {
-      ja: "開発版のナイトリーリリースを配布中。Windows（exe）・macOS（dmg）・Linux（AppImage）・Android（APK）・iOS（未署名 IPA）が入っている。",
-      en: "Nightly development releases. Windows (exe), macOS (dmg), Linux (AppImage), Android (APK) and iOS (unsigned IPA) included."
+      ja: "開発版を配布中。Windows・macOS・Linux・Android・iOS 用が入っている。ログインは携帯の Discord アプリで QR を読むだけ。",
+      en: "Development builds available. Windows, macOS, Linux, Android and iOS included. Sign in by scanning a QR code with the Discord app on your phone."
     },
     "dl.btn": { ja: "リリース一覧を開く", en: "Open releases" },
-    "dl.login": {
-      ja: "ログインは QR コードを携帯の Discord アプリで読む方式。初回起動時は案内に従うこと。",
-      en: "Sign in by scanning a QR code with the Discord app on your phone. Follow the on-screen guide on first launch."
-    },
     "dl.warn": {
-      ja: "サードパーティ製クライアントの利用は自己責任です。",
-      en: "Using a third-party client is at your own risk."
+      ja: "サードパーティ製クライアントの利用は Discord の利用規約に反し、アカウントを失う可能性があります。自己責任でどうぞ。",
+      en: "Third-party clients break Discord's terms of service and can cost you your account. Use at your own risk."
     },
-    "docs.title": { ja: "ドキュメント", en: "Documentation" },
-    "docs.api.t": { ja: "API ドキュメント", en: "API docs" },
-    "docs.api.d": {
-      ja: "テーマ・プラグイン作者向けリファレンス（日英）。",
-      en: "Theme and plugin author reference (Japanese/English)."
-    },
-    "docs.repo.t": { ja: "ソースコード", en: "Source code" },
-    "docs.repo.d": {
-      ja: "本体・ドキュメント・ナイトリー配布のリポジトリ。",
-      en: "App, docs and nightly distribution repositories."
-    }
+    "foot.disc": { ja: "Discord とは関係ありません。", en: "Not affiliated with Discord." }
   };
 
   var TITLE = {
-    ja: "Gumicord — 自分好みの Discord クライアント",
-    en: "Gumicord — Discord, your way"
+    ja: "Gumicord — Discordを、もっと自分好みに",
+    en: "Gumicord — Discord, much more you"
   };
 
   /* ---------- language ---------- */
@@ -108,8 +96,6 @@
 
   /* ---------- theme ---------- */
   var KEY = "gumicord-site-theme";
-  var prismLight = document.getElementById("prism-light");
-  var prismDark = document.getElementById("prism-dark");
   var buttons = Array.prototype.slice.call(document.querySelectorAll(".theme-switch button"));
   var media = window.matchMedia("(prefers-color-scheme: dark)");
   function currentTheme() {
@@ -120,8 +106,6 @@
     var darkOn = mode === "dark" || (mode === "auto" && media.matches);
     document.documentElement.setAttribute("data-theme", darkOn ? "dark" : "light");
     try { document.documentElement.style.colorScheme = darkOn ? "dark" : "light"; } catch (e) {}
-    if (prismLight) prismLight.disabled = darkOn;
-    if (prismDark) prismDark.disabled = !darkOn;
     buttons.forEach(function (b) {
       b.setAttribute("aria-pressed", b.getAttribute("data-mode") === mode ? "true" : "false");
     });
@@ -137,4 +121,21 @@
     media.addEventListener("change", function () { if (currentTheme() === "auto") applyTheme("auto"); });
   }
   applyTheme(currentTheme());
+
+  /* ---------- mock theme demo ---------- */
+  var mock = document.getElementById("mock");
+  var swatches = Array.prototype.slice.call(document.querySelectorAll(".swatches button"));
+  swatches.forEach(function (b) {
+    b.addEventListener("click", function () {
+      var name = b.getAttribute("data-theme-set");
+      if (name === "midnight") {
+        mock.removeAttribute("data-mock");
+      } else {
+        mock.setAttribute("data-mock", name);
+      }
+      swatches.forEach(function (o) {
+        o.setAttribute("aria-pressed", o === b ? "true" : "false");
+      });
+    });
+  });
 })();
