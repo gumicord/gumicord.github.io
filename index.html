@@ -1,12 +1,29 @@
 <!DOCTYPE html>
-<html lang="ja" data-theme="light">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
-  <title>Gumicord — Discordを、もっと自分好みに</title>
+  <title>Gumicord — Discord, much more you</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Gumicord はテーマとプラグインで自分好みに育てる Discord クライアント。Windows・macOS・Linux・Android・iOS に対応。">
+  <meta name="description" content="Gumicord is a customizable Discord client with themes and plugins. Windows, macOS, Linux, Android and iOS supported.">
+  <link rel="canonical" href="https://gumicord.github.io/">
+  <link rel="alternate" hreflang="en" href="https://gumicord.github.io/">
+  <link rel="alternate" hreflang="ja" href="https://gumicord.github.io/ja/">
+  <link rel="alternate" hreflang="x-default" href="https://gumicord.github.io/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Gumicord">
+  <meta property="og:title" content="Gumicord — Discord, much more you">
+  <meta property="og:description" content="A Discord client you raise with themes and plugins. Windows, macOS, Linux, Android and iOS supported.">
+  <meta property="og:url" content="https://gumicord.github.io/">
+  <meta property="og:image" content="https://gumicord.github.io/assets/app-icon-desktop.png">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Gumicord — Discord, much more you">
+  <meta name="twitter:description" content="A Discord client you raise with themes and plugins. Windows, macOS, Linux, Android and iOS supported.">
+  <meta name="twitter:image" content="https://gumicord.github.io/assets/app-icon-desktop.png">
+  <meta name="theme-color" content="#7c6cf0">
   <meta name="color-scheme" content="light dark">
   <link rel="icon" href="assets/app-icon-desktop.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -16,14 +33,13 @@
       <span>Gumicord</span>
     </a>
     <nav class="links">
-      <a href="#demo" data-i18n="nav.demo">試す</a>
-      <a href="#features" data-i18n="nav.features">特徴</a>
-      <a href="#download" data-i18n="nav.download">ダウンロード</a>
+      <a href="#features">Features</a>
+      <a href="#download">Download</a>
     </nav>
     <div class="controls">
       <select id="lang-select" aria-label="Language">
         <option value="ja">日本語</option>
-        <option value="en">English</option>
+        <option value="en" selected>English</option>
       </select>
       <div class="theme-switch" role="group" aria-label="Color theme">
         <button type="button" data-mode="light" aria-pressed="false">Light</button>
@@ -31,7 +47,7 @@
         <button type="button" data-mode="auto" aria-pressed="true">Auto</button>
       </div>
       <a class="github-mark" href="https://github.com/gumicord/gumicord" target="_blank" rel="noopener" aria-label="GitHub repository">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+        <i class="bi bi-github" style="font-size: 20px;"></i>
       </a>
     </div>
   </header>
@@ -40,12 +56,12 @@
     <section class="hero">
       <div class="hero-inner">
         <div class="hero-copy">
-          <p class="eyebrow" data-i18n="hero.eyebrow">Discordを、もっと自分好みに</p>
+          <p class="eyebrow">Discord, much more you</p>
           <h1>Gumicord</h1>
-          <p class="tagline" data-i18n="hero.tagline">好きな見た目、好きな機能、好きなデバイスで。重いクライアントにさよならして、軽くてかわいい毎日へ。</p>
+          <p class="tagline">Your look, your features, your devices. Say goodbye to heavy clients and hello to light, lovely days.</p>
           <div class="cta">
-            <a class="btn primary" href="https://github.com/gumicord/gumicord-nightly/releases" data-i18n="hero.dl">無料でダウンロード</a>
-            <a class="btn ghost" href="#demo" data-i18n="hero.try">テーマを試す</a>
+            <a class="btn primary" href="https://github.com/gumicord/gumicord-nightly/releases">Download free</a>
+            <a class="btn ghost" href="#features">See features</a>
           </div>
           <ul class="platforms" aria-label="Platforms">
             <li>Windows</li><li>macOS</li><li>Linux</li><li>Android</li><li>iOS</li>
@@ -59,72 +75,46 @@
       </div>
     </section>
 
-    <section id="demo" class="block">
-      <h2 data-i18n="demo.title">着せ替え、してみる？</h2>
-      <p class="lede" data-i18n="demo.lede">色を押すと、この見本のチャットがその場で着替える。実際のアプリではこんな感じに一瞬で変わる。</p>
-      <div class="swatches" role="group" aria-label="Theme">
-        <button type="button" data-theme-set="midnight" aria-pressed="true"><span class="dot" style="background:#7c6cf0"></span><span data-i18n="demo.midnight">ミッドナイト</span></button>
-        <button type="button" data-theme-set="sakura" aria-pressed="false"><span class="dot" style="background:#f472a7"></span><span data-i18n="demo.sakura">さくら</span></button>
-        <button type="button" data-theme-set="mint" aria-pressed="false"><span class="dot" style="background:#2fbfa0"></span><span data-i18n="demo.mint">ミント</span></button>
-        <button type="button" data-theme-set="honey" aria-pressed="false"><span class="dot" style="background:#e8a13d"></span><span data-i18n="demo.honey">はちみつ</span></button>
-      </div>
-      <div class="mock" id="mock">
-        <div class="mk-side">
-          <div class="mk-servers"><i class="on"></i><i></i><i></i></div>
-          <div class="mk-channels"><b># <span data-i18n="demo.general">ざつだん</span></b><span># <span data-i18n="demo.bot">botあそび</span></span><span># <span data-i18n="demo.theme">テーマじまん</span></span></div>
-        </div>
-        <div class="mk-main">
-          <div class="mk-head"># <span data-i18n="demo.general">ざつだん</span></div>
-          <div class="mk-msgs">
-            <div class="mk-msg"><i style="background:#7c6cf0">ね</i><div><b>ねんねこ <em>BOT</em></b><p data-i18n="demo.m1">新しいテーマ入れたよ〜！見て見て</p></div></div>
-            <div class="mk-msg"><i style="background:#2fbfa0">し</i><div><b>しろねこ</b><p data-i18n="demo.m2">かわいい！うちはミントにした</p></div></div>
-            <div class="mk-msg"><i style="background:#e8a13d">も</i><div><b>もふもふ</b><p data-i18n="demo.m3">軽いから古いPCでもサクサクだね</p></div></div>
-          </div>
-          <div class="mk-input" data-i18n="demo.input">メッセージを送信</div>
-        </div>
-      </div>
-    </section>
-
     <section id="features" class="block">
-      <h2 data-i18n="feat.title">うれしいこと</h2>
+      <h2>Why you'll love it</h2>
       <div class="grid">
         <article>
-          <div class="icon">◐</div>
-          <h3 data-i18n="feat.theme.t">見た目を変える</h3>
-          <p data-i18n="feat.theme.d">壁紙を敷いたり、色を塗り替えたり。気分で着替えて、友だちに自慢しよう。</p>
+          <div class="icon"><i class="bi bi-palette"></i></div>
+          <h3>Change the look</h3>
+          <p>Lay down a wallpaper, repaint the colors. Dress it up by mood and show your friends.</p>
         </article>
         <article>
-          <div class="icon">✦</div>
-          <h3 data-i18n="feat.plugin.t">機能を足せる</h3>
-          <p data-i18n="feat.plugin.d">便利機能は後から追加。変なものは入る前に止まるから安心。</p>
+          <div class="icon"><i class="bi bi-puzzle"></i></div>
+          <h3>Add features</h3>
+          <p>Add handy features later. Shady ones get stopped before they get in.</p>
         </article>
         <article>
-          <div class="icon">➤</div>
-          <h3 data-i18n="feat.perf.t">軽くて速い</h3>
-          <p data-i18n="feat.perf.d">起動は一瞬、動作はサクサク。古いPCやスマホでも快適に。</p>
+          <div class="icon"><i class="bi bi-lightning-charge"></i></div>
+          <h3>Light and fast</h3>
+          <p>Starts in a blink, runs buttery smooth. Comfy even on old PCs and phones.</p>
         </article>
         <article>
-          <div class="icon">❏</div>
-          <h3 data-i18n="feat.dev.t">どこでも同じ</h3>
-          <p data-i18n="feat.dev.d">パソコンでもスマホでも、見た目も使い心地もそのまま。</p>
+          <div class="icon"><i class="bi bi-devices"></i></div>
+          <h3>Same everywhere</h3>
+          <p>Desktop or phone, the look and feel come along.</p>
         </article>
       </div>
-      <p class="more"><a href="https://gumicord.github.io/api-docs/" data-i18n="feat.more">作る人向けの詳しい説明 →</a></p>
+      <p class="more"><a href="https://gumicord.github.io/api-docs/">Details for makers →</a></p>
     </section>
 
     <section id="download" class="block">
-      <h2 data-i18n="dl.title">ダウンロード</h2>
-      <p data-i18n="dl.body">開発版を配布中。Windows・macOS・Linux・Android・iOS 用が入っている。ログインは携帯の Discord アプリで QR を読むだけ。</p>
+      <h2>Download</h2>
+      <p>Development builds available. Windows, macOS, Linux, Android and iOS included. Sign in by scanning a QR code with the Discord app on your phone.</p>
       <div class="cta">
-        <a class="btn primary" href="https://github.com/gumicord/gumicord-nightly/releases" data-i18n="dl.btn">リリース一覧を開く</a>
+        <a class="btn primary" href="https://github.com/gumicord/gumicord-nightly/releases">Open releases</a>
       </div>
-      <p class="warn small" data-i18n="dl.warn">サードパーティ製クライアントの利用は Discord の利用規約に反し、アカウントを失う可能性があります。自己責任でどうぞ。</p>
+      <p class="warn small">Third-party clients break Discord's terms of service and can cost you your account. Use at your own risk.</p>
     </section>
   </main>
 
   <footer>
     <span>© 2026 Gumicord · MIT License</span>
-    <span class="disclaimer" data-i18n="foot.disc">Discord とは関係ありません。</span>
+    <span class="disclaimer">Not affiliated with Discord.</span>
   </footer>
 
   <script src="js/app.js"></script>
