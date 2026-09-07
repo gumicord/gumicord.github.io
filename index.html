@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <title>Gumicord — 自分好みの Discord クライアント</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Gumicord はテーマとプラグインで拡張できるサードパーティ製 Discord クライアント。Windows・macOS・Linux・Android・iOS に対応。">
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" href="assets/app-icon-desktop.png">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/prismjs@1/themes/prism.min.css" id="prism-light">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/prismjs@1/themes/prism-tomorrow.min.css" id="prism-dark" disabled>
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="#top">
+      <img src="assets/app-icon-desktop.png" alt="" width="28" height="28">
+      <span>Gumicord</span>
+    </a>
+    <nav class="links">
+      <a href="#features" data-i18n="nav.features">機能</a>
+      <a href="#download" data-i18n="nav.download">ダウンロード</a>
+      <a href="#docs" data-i18n="nav.docs">ドキュメント</a>
+    </nav>
+    <div class="controls">
+      <select id="lang-select" aria-label="Language">
+        <option value="ja">日本語</option>
+        <option value="en">English</option>
+      </select>
+      <div class="theme-switch" role="group" aria-label="Color theme">
+        <button type="button" data-mode="light" aria-pressed="false">Light</button>
+        <button type="button" data-mode="dark" aria-pressed="false">Dark</button>
+        <button type="button" data-mode="auto" aria-pressed="true">Auto</button>
+      </div>
+      <a class="github-mark" href="https://github.com/gumicord/gumicord" target="_blank" rel="noopener" aria-label="GitHub repository">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+      </a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <p class="eyebrow" data-i18n="hero.eyebrow">サードパーティ製 Discord クライアント</p>
+      <h1>Gumicord</h1>
+      <p class="tagline" data-i18n="hero.tagline">テーマとプラグインで、自分好みの Discord を。Windows・macOS・Linux・Android・iOS の5環境で同じ見た目・同じ挙動を目指す、自前レンダラのクライアント。</p>
+      <p class="warn" data-i18n="hero.warn">警告：サードパーティ製クライアントでの接続は Discord の利用規約に反し、アカウントを失う可能性があります。</p>
+      <div class="cta">
+        <a class="btn primary" href="https://github.com/gumicord/gumicord-nightly/releases" data-i18n="hero.dl">ナイトリー版を入手</a>
+        <a class="btn" href="https://gumicord.github.io/api-docs/" data-i18n="hero.docs">ドキュメントを見る</a>
+      </div>
+      <ul class="platforms" aria-label="Platforms">
+        <li>Windows</li><li>macOS</li><li>Linux</li><li>Android</li><li>iOS</li>
+      </ul>
+    </section>
+
+    <section id="features" class="block">
+      <h2 data-i18n="feat.title">機能</h2>
+      <div class="grid">
+        <article>
+          <h3 data-i18n="feat.theme.t">テーマは JSON</h3>
+          <p data-i18n="feat.theme.d">CSS は不要。書いたら即反映され、壊れた箇所だけ無視される。5環境で見た目の差なく適用される。</p>
+        </article>
+        <article>
+          <h3 data-i18n="feat.plugin.t">プラグインは TypeScript</h3>
+          <p data-i18n="feat.plugin.d">画面部品を安定 ID で指名して変形を登録。隔離実行と承認制で、暴走しても本体は止まらない。</p>
+        </article>
+        <article>
+          <h3 data-i18n="feat.perf.t">軽量・高速を目指す</h3>
+          <p data-i18n="feat.perf.d">Rust + wgpu の自前レンダラ。Electron より小さい常駐・速い起動を目標に、計測駆動で開発している。</p>
+        </article>
+        <article>
+          <h3 data-i18n="feat.ime.t">日本語入力</h3>
+          <p data-i18n="feat.ime.d">インライン変換で打って送信。各環境の標準入力経路を使う。</p>
+        </article>
+        <article>
+          <h3 data-i18n="feat.perm.t">権限は宣言制</h3>
+          <p data-i18n="feat.perm.d">使える道具は宣言した能力だけ。初見は承認窓が出て、許可するまで動かない。</p>
+        </article>
+        <article>
+          <h3 data-i18n="feat.oss.t">オープンソース</h3>
+          <p data-i18n="feat.oss.d">MIT ライセンス。仕様書を正本とする仕様駆動開発で作っている。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="block">
+      <h2 data-i18n="code.title">こんなふうに書く</h2>
+      <div class="code2">
+        <div>
+          <h3>theme.json</h3>
+<pre><code class="language-jsonc">{
+  "manifest": { "id": "dev.example.mytheme",
+                "name": "My theme",
+                "version": "1.0.0", "abi": 1 },
+  "tokens": {
+    "color.bg.base": "#101018",
+    "color.text.primary": "#f0f0f5"
+  },
+  "rules": [
+    { "select": "app.window",
+      "style": { "background": "$color.bg.base" } },
+    { "select": "chat.message.content",
+      "style": { "color": "$color.text.primary" } }
+  ]
+}</code></pre>
+        </div>
+        <div>
+          <h3>plugin.ts</h3>
+<pre><code class="language-ts">import { log, ui } from "@gumicord/sdk";
+
+log.info("hello plugin loaded");
+
+ui.patch("chat.message.header.author", (node) =>
+  ui.after(node, ui.badge({ text: "hi" })),
+);</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <section id="download" class="block">
+      <h2 data-i18n="dl.title">ダウンロード</h2>
+      <p data-i18n="dl.body">開発版のナイトリーリリースを配布中。Windows（exe）・macOS（dmg）・Linux（AppImage）・Android（APK）・iOS（未署名 IPA）が入っている。</p>
+      <div class="cta">
+        <a class="btn primary" href="https://github.com/gumicord/gumicord-nightly/releases" data-i18n="dl.btn">リリース一覧を開く</a>
+      </div>
+      <p class="note" data-i18n="dl.login">ログインは QR コードを携帯の Discord アプリで読む方式。初回起動時は案内に従うこと。</p>
+      <p class="warn small" data-i18n="dl.warn">サードパーティ製クライアントの利用は自己責任です。</p>
+    </section>
+
+    <section id="docs" class="block">
+      <h2 data-i18n="docs.title">ドキュメント</h2>
+      <div class="grid">
+        <article>
+          <h3 data-i18n="docs.api.t">API ドキュメント</h3>
+          <p data-i18n="docs.api.d">テーマ・プラグイン作者向けリファレンス（日英）。</p>
+          <p><a href="https://gumicord.github.io/api-docs/">gumicord.github.io/api-docs →</a></p>
+        </article>
+        <article>
+          <h3 data-i18n="docs.repo.t">ソースコード</h3>
+          <p data-i18n="docs.repo.d">本体・ドキュメント・ナイトリー配布のリポジトリ。</p>
+          <p>
+            <a href="https://github.com/gumicord/gumicord">gumicord</a> ·
+            <a href="https://github.com/gumicord/api-docs">api-docs</a> ·
+            <a href="https://github.com/gumicord/gumicord-nightly">nightly</a>
+          </p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>© 2026 Gumicord · MIT License</span>
+  </footer>
+
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-core.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-json.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-typescript.min.js"></script>
+  <script>
+    if (window.Prism && Prism.languages.json && !Prism.languages.jsonc) {
+      Prism.languages.jsonc = Prism.languages.json;
+    }
+  </script>
+  <script src="js/app.js"></script>
+</body>
+</html>
